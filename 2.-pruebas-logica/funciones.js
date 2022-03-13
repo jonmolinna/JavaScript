@@ -55,3 +55,21 @@ nombres.sort((a,b) => {
 
 
 // ---------------------------------------------------------------------- REDUCE
+// Ejecuta una función reductora sobre cada elemento de un array, devolviendo como resultado un único valor.
+// Retorna un nuevo valor
+// Recibe cuatro argumentos => Acumulador (a), Valor Actual (b), indice actual, array
+const number = [1, 2, 3, 4, 5, 6, 10];
+const newNumber = number.reduce((a, b) => a + b); // 31
+const newNumber2 = number.reduce((a,b) => a + b, 10) // 41
+
+const integrado = [[0,1], [2,3], [4,5]];
+const newIntegrado = integrado.reduce((a,b) => a.concat(b)); // [ 0, 1, 2, 3, 4, 5 ]
+
+// devuelve un objecto de nombres y su cantidad
+const names = ['Jorge', 'Maria', 'Jose', 'Bod', 'Pat', 'Maria', 'Jose', 'Jose'];
+const cantidadNombres = names.reduce((contadorNombre, nombre) => {
+    contadorNombre[nombre] = (contadorNombre[nombre] || 0) + 1;
+    return contadorNombre;
+}, {});
+
+// { Jorge: 1, Maria: 2, Jose: 3, Bod: 1, Pat: 1 }
